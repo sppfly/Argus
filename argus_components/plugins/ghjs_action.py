@@ -76,6 +76,8 @@ class GHJSAction(GHAction):
             self.parse_inputs(action_yml)
             self.parse_outputs(action_yml)
 
+        from pprint import pprint
+        pprint(vars(self))
         # Run CodeQL
         codeql_folder = LOCAL_FOLDER / f"{self.action_name.replace('/', '#')}_codeql"
 
@@ -85,6 +87,7 @@ class GHJSAction(GHAction):
         else:
             logger.debug(f"CodeQL folder {codeql_folder} already exists")
 
+        return 
         # Run CodeQL query
         if CodeQL.query_results_present(codeql_folder):
             logger.debug(f"CodeQL query results already present in {codeql_folder}")

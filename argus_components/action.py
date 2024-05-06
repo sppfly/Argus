@@ -69,6 +69,10 @@ class Action:
         clone_repo(self.action_url, folder, self.options_dict)
         # Get action Object
         action_obj = GHAction.identify_action(self.name, self.action_path, folder, self)
+        from pprint import pprint
+        pprint(vars(action_obj.action))
+        pprint(vars(action_obj))
+        pprint(type(action_obj))
         self.report = action_obj.run()
 
     def _get_action_name_from_url(self):

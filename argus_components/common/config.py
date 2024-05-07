@@ -24,10 +24,11 @@ import pathlib
 import os
 
 LOCAL_FOLDER : pathlib.Path = pathlib.Path('/tmp')
-CODEQL_BIN : pathlib.Path = pathlib.Path('~/codeql_home/codeql/codeql')
+CODEQL_BIN : pathlib.Path = pathlib.Path('/scratch/liuuo/codeql_home/codeql/codeql')
+# CODEQL_BIN : pathlib.Path = pathlib.Path('~/codeql_home/codeql/codeql')
 QUERY_PATH : pathlib.Path = pathlib.Path(os.getcwd()) / "qlqueries"
 ENABLE_LOW_PRIORITY_REPORTS : bool = True
-RESULTS_FOLDER : pathlib.Path = pathlib.Path("/results")
+RESULTS_FOLDER : pathlib.Path = pathlib.Path("/chalmers/users/liuuo/projects/chalmers/Argus/results")
 
 def parse_config(config_file : str):
     # open and read the config json file

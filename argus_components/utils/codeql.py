@@ -112,7 +112,7 @@ class CodeQL:
     # Run Codeql Query
     @staticmethod
     def run_codeql_query(repo_path : pathlib.Path):
-        cmd = f"{CODEQL_BIN} database run-queries --threads=2 {repo_path} {QUERY_PATH}"
+        cmd = f"{CODEQL_BIN} database run-queries --threads=12 {repo_path} {QUERY_PATH}"
         stdout, stderr = run_cmd(cmd, verbose=True)
 
         # if the query failed, raise an error

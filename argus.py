@@ -78,7 +78,7 @@ def main(mode, url, branch, commit, tag, output_folder, config, verbose, action_
         action = argus_components.Action(url, option_dict, action_path)
         action.run()
         # action.print_report()
-        # action.save_report_to_file()
+        action.save_report_to_file()
 
 
 if __name__ == "__main__":

@@ -87,7 +87,6 @@ class GHJSAction(GHAction):
         else:
             logger.debug(f"CodeQL folder {codeql_folder} already exists")
 
-        return 
         # Run CodeQL query
         if CodeQL.query_results_present(codeql_folder):
             logger.debug(f"CodeQL query results already present in {codeql_folder}")
@@ -96,4 +95,5 @@ class GHJSAction(GHAction):
             results = CodeQL.run_codeql_query(codeql_folder)
 
         results = CodeQL.parse_codeql_results(codeql_folder)
+        pprint(results)
         return ActionReport(results, self)
